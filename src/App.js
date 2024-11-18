@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+
+import React, { useState } from "react";
+
+
+
+
+const TextPrompt = () => {
+  const [text, setText] = useState(""); 
+
+  const handleUppercase = () => {
+    setText(text.toUpperCase());
+  };
+
+  const handleLowercase = () => {
+    setText(text.toLowerCase());
+  };
+  
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    alert("Text copied to clipboard!");
+  };
+
+  const handleRemove = () => {
+    setText("");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-prompt-container">
+      <h2>Akbar Ali Text Prompt</h2>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        rows="5"
+        placeholder="Enter your text here..."
+        className="text-area"
+      ></textarea>
+      <div className="button-group">
+        <button onClick={handleUppercase} className="button button-uppercase">
+          Uppercase
+        </button>
+        <button onClick={handleLowercase} className="button button-lowercase">
+          Lowercase
+        </button>
+        <button onClick={handleCopy} className="button button-copy">
+          Copy
+        </button>
+        <button onClick={handleRemove} className="button button-remove">
+          Remove
+        </button>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default TextPrompt;

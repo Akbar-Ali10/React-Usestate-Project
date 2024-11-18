@@ -11,3 +11,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+.text-prompt-container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.text-area {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  width: 22%;
+  text-align: center;
+}
+
+.button-uppercase {
+  background: #007bff;
+  color: white;
+}
+
+.button-lowercase {
+  background: #6c757d;
+  color: white;
+}
+
+.button-copy {
+  background: #28a745;
+  color: white;
+}
+
+.button-remove {
+  background: #dc3545;
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
